@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Base64GUI
 {
@@ -41,9 +30,21 @@ namespace Base64GUI
                 rw.Show();
                 rw.MainTextBox.Text = base64_str;
             }
-            if (EncodeRadio.IsChecked == true)
+            else if (EncodeRadio.IsChecked == true)
             {
+                try
+                {
+                    byte[] base64_byte = Convert.FromBase64String(MainTextBox.Text);
 
+                    res_win rw = new res_win();
+
+                    rw.Show();
+                    rw.MainTextBox.Text = Encoding.Default.GetString(base64_byte);
+                }
+                catch
+                {
+                    MessageBox.Show("Невалидная строка");
+                }
             }
         }
     }
