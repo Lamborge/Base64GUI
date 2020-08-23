@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Base64GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="512">
+        ResizeMode="NoResize"
+        Title="Base64GUI" Height="400" Width="512">
     <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="54,23,0,0" Text="Что делаем:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <RadioButton Content="Закодировать" IsChecked="True" HorizontalAlignment="Left" Margin="150,26,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <RadioButton Content="Декодировать" HorizontalAlignment="Left" Margin="264,26,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,98,0,0" Text="Текс:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" FontFamily="Aharoni"/>
+        <TextBox HorizontalAlignment="Left" Margin="103,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Height="250" SelectionTextBrush="#FFFF5555">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FFFF4141" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
 
     </Grid>
 </Window>
