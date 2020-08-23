@@ -26,9 +26,10 @@ namespace Base64GUI
                 base64_str = Convert.ToBase64String(decode_byte);
 
                 res_win rw = new res_win();
+                
 
-                rw.Show();
                 rw.MainTextBox.Text = base64_str;
+                rw.Show();
             }
             else if (EncodeRadio.IsChecked == true)
             {
