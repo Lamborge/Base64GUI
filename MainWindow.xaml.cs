@@ -20,9 +20,31 @@ namespace Base64GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        string base64_str;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DecodeRadio.IsChecked == true)
+            {
+                byte[] decode_byte = Encoding.Default.GetBytes(MainTextBox.Text);
+
+                base64_str = Convert.ToBase64String(decode_byte);
+
+                res_win rw = new res_win();
+
+                rw.Show();
+                rw.MainTextBox.Text = base64_str;
+            }
+            if (EncodeRadio.IsChecked == true)
+            {
+
+            }
         }
     }
 }
